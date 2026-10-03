@@ -1,5 +1,6 @@
 const checkInForm = document.getElementById("checkInForm");
 const attendeeNameInput = document.getElementById("attendeeName");
+const attendeeCount = document.getElementById("attendeeCount");
 const greeting = document.getElementById("greeting");
 
 checkInForm.addEventListener("submit", function (event) {
@@ -18,6 +19,7 @@ checkInForm.addEventListener("submit", function (event) {
   greeting.textContent = `Welcome, ${attendeeName}! Thanks for checking in to the Team Sustainability Summit.`;
   greeting.classList.add("success-message");
   greeting.style.display = "block";
+  attendeeCount.textContent = Number(attendeeCount.textContent) + 1;
 
   checkInForm.reset();
 });
